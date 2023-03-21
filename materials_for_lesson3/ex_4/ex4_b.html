@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>The largest number</title>
+</head>
+<body>
+    <h1>The largest number</h1>
+    <p>Enter three numbers:</p>
+
+    <input type="number" id="num1"> 
+    <input type="number" id="num2">
+    <input type="number" id="num3">
+
+    <br> <button onclick="findMax()">Find the largest number</button>
+    <p id="result"></p>
+
+    <script>
+    findMax() 
+    { 
+        var num1 = parseFloat(document.getElementById("num1").value);
+        var num2 = parseFloat(document.getElementById("num2").value);
+        var num3 = parseFloat(document.getElementById("num3").value);
+        if(num1 > num2 && num1 > num3)
+        {
+            document.getElementById("result").innerHTML = "The largest number is: " + num1;
+        }
+        else if(num2 > num1 && num2 > num3)
+        {
+            document.getElementById("result").innerHTML = "The largest number is: " + num2;
+        }
+        else
+        {
+            document.getElementById("result").innerHTML = "The largest number is: " + num3; 
+        }
+    }
+    </script>
+</body>
+</html>

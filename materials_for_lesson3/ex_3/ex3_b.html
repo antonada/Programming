@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Program that selects numbers</title>
+</head>
+<body>
+    <h1>Program that selects numbers</h1>
+    <p>We drew a number between 1 and 10. Try to guess which number it is</p>
+
+    <label for="guess">Your suggestion</label>
+    <input type="text" id = "guess"> 
+
+    <button nonclic = "checkNumber()">guess</button>
+
+    <p id = "result"></p>
+
+    <script>
+        function checkNumber()
+        {
+            let number = Math.ceil(Math.random() * 10);
+            let guess = document.getElementById("guess").value;
+
+            if (guess == number) 
+            {
+                document.getElementById("result").innerHTML = "Good job!"
+            }
+            else
+            {
+                document.getElementById("score").innerHTML = "Bad job :("
+            }
+        }
+    </script>
+    </body>
+    </html>
+
+    
