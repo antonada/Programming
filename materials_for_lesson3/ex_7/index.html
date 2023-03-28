@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Student object</title>
+  </head>
+  <body>
+    <h1>Student data:</h1>
+    <form>
+      <label for="name">name:</label>
+      <input type="text" id="name" name="name"><br>
+     
+      <label for="surname">surname:</label>
+      <input type="text" id="surname" name="surname"><br>
+     
+      <label for="Year">Year of study:</label>
+      <input type="number" id="Year" name="Year"><br>
+     
+      <button type="button" onclick="write()">write</button>
+    </form>
+   
+    <h2>Wyświetlane dane:</h2>
+    <p>name: <span id="name"></span></p>
+    <p>surname: <span id="surname"></span></p>
+    <p>Year of study: <span id="Year"></span></p>
+   
+    <script>
+      function Student(name, surname, Year) {
+        this.name = name;
+        this.surname = surname;
+        this.year = Year;
+      }
+
+      function zapisz() {
+        var name= document.getElementById("name").value;
+        var surname = document.getElementById("surname").value;
+        var year = document.getElementById("year").value;
+        var student = new Student(name, surname, year);
+        document.getElementById("name").textContent = student.name;
+        document.getElementById("surname").textContent = student.surname;
+        document.getElementById("year").textContent = student.year;
+      }
+    </script>
+  </body>
+</html>

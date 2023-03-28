@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Electronic clock</title>
+    <script>
+        function showTime() {
+            var currentDate = new Date();
+            var hours = currentDate.getHours();
+            var minutes = currentDate.getMinutes();
+            var seconds = currentDate.getSeconds();
+            var timeString = hours.toString().padStart(2, '0') + ":" +
+            minutes.toString().padStart(2, '0') + ":" + seconds.toString().padStart(2, '0');
+            document.getElementById('clock').innerHTML = timeString;
+        }
+
+        setInterval(showTime, 1000);
+    </script>
+</head>
+<body>
+    <h1>Electronic clock</h1>
+    <div id="clock"></div>
+</body>
+</html>
