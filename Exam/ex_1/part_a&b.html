@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Calculator</title>
+        <script>
+            function calculate(){
+                var num1 = document.getElementById("num1").value;
+                var num2 = document.getElementById("num2").value;
+                var operator = document.getElementById("operator").value;
+
+                if (isNaN(num1) || isNaN(num2)){
+                    alert("Please enter correct numbers")
+                }
+                else{
+                    var result;
+                    switch(operator){
+                        case"+":
+                        result = parseFloat(num1) + parseFloat(num2);
+                        break;
+                        case"-":
+                        result = parseFloat(num1) - parseFloat(num2);
+                        break;
+                        case"*":
+                        result = parseFloat(num1) * parseFloat(num2);
+                        break;
+                        case"/":
+                        result = parseFloat(num1) / parseFloat(num2);
+                        break;
+                    }
+                    document.getElementById("result").innerHTML = "Result" + result;
+                }
+            }
+            function clear() {
+                document.getElementById("num1").value = "";
+                document.getElementById("num2").value = "";
+                document.getElementById("operator").value = "+";
+                document.getElementById("result").innerHTML = "";
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Calculator</h1>
+        <p>Please enter two numbers and choose maths operator</p>
+        <input type="text" id="num1" placeholder="First number"><br><br>
+        <input type="text" id="num2" placeholder="Second number"><br><br>
+        <select id="operator">
+            <option value="+">+</option>
+            <option value="-">+</option>
+            <option value="/">+</option>
+            <option value="*">+</option>
+        </select><br><br>
+        <button onclick="calculate()">Calculate</button>
+        <button onclick="clear()">Clear</button>
+        <p id="result"></p>
+    </body>
+</html>
